@@ -1,0 +1,41 @@
+h1 {
+  margin-left: 40px;
+}
+
+.box {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 50px 80px;
+  border: 1px solid black;
+  display: inline-block;
+  perspective: 600px;
+  /*transform-style: perserve-3d;
+  transition: transform 2s*/
+}
+
+.box div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: perserve-3d;
+  transition: transform 2s;
+}
+
+.rotate3d {
+  background: hsla(240, 70%, 50%, 0.6);
+  transform: rotate3d(1, 1, 1,360deg);
+}
+
+.translate3d {
+  background: hsla(170, 70%, 50%, 0.6);
+  transform: translateX(40px) translateY(40px);
+}
+
+.scale3d {
+  background: hsla(320, 70%, 50%, 0.6);
+}
+
+.rotate3d:hover {
+  transform: rotateX(180deg) rotateY(180deg);
+}
