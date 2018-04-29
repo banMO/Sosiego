@@ -121,7 +121,9 @@ function wf(positionX, positionY)
   botton.setAttribute('class', 'back')
 
   elementDir.style.transform = "translateZ(" + positionY + "px) translateX(" + positionX + "px)"
-  elementDir.front.hover.style.transform = "scale3d(1.5,1.5,1.5)";
+  $(elementDir).hover(function () {
+    $(this).css("transform", "scale(1)");
+  });
   elementDir.appendChild(front)
   elementDir.appendChild(back)
   elementDir.appendChild(left)
