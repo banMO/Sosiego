@@ -29,7 +29,6 @@ h1 {
 
 .translate3d {
   background: hsla(170, 70%, 50%, 0.6);
-  transform: translateX(40px) translateY(40px);
 }
 
 .scale3d {
@@ -38,4 +37,57 @@ h1 {
 
 .rotate3d:hover {
   transform: rotateX(180deg) rotateY(180deg);
+}
+
+.translate3d:hover {
+  transform: translate3d(40px, 40px, 70px);
+}
+
+.scale3d:hover {
+  transform: scale3d(1.5,1.5,1.5);
+}
+
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.cube div {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  border: 2px solid black;
+}
+
+.cube .front {
+  transform: translateZ(-50px);
+  background-image: url('img/paper.png');
+  background-size: cover;
+}
+
+.cube .back {
+  transform: translateZ(50px);
+}
+
+.cube .left {
+  transform: rotateY(90deg) translateZ(50px);
+  background-color: aqua;
+}
+
+.cube .right {
+  transform: rotateY(90deg) translateZ(-50px);
+  background-color: aqua;
+}
+
+.cube .top {
+  transform: rotateX(90deg) translateZ(50px);
+  background-color: aqua;
+}
+
+.cube .bottom {
+  transform: rotateX(90deg) translateZ(-50px);
+
 }
