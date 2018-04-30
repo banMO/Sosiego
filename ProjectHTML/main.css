@@ -3,7 +3,6 @@ body {
 	width: 100%;
 	padding: 0;
   margin: 0;
-  background: black;
 }
 
 .container {
@@ -74,7 +73,7 @@ body {
   transform: rotateX(90deg) translateZ(400px);
 }
 
-.floor .botton {
+.floor .bottom {
   width: 1000px;
   height: 800px;
   background: hsla(180,100%, 50%, 0.7);
@@ -85,8 +84,8 @@ body {
   position: absolute;
   transform-style: preserve-3d;
   transform-origin: center center 0px;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   transform: translateZ(-385px);
 }
 
@@ -97,46 +96,49 @@ body {
 }
 
 .element .front{
-  width: 50px;
-  height: 50px;
-  transform: translateZ(15px);
-  background-image: url('img/paper.png');
+  width: 100px;
+  height: 100px;
+  transform: translateZ(50px) translateY(-50px);
+  /*transform: translateZ(-15px);*/
+  /*background-image: url('img/paper.png');*/
   background-size: cover;
 }
 
 .element .back{
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: yellow;
-  transform: translateZ(-15px);
+  transform: translateZ(-50px) translateY(-50px);
+  /*transform: translateZ(-15px);*/
 }
 
 .element .left {
-  width: 30px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: yellow;
-  transform: rotateY(90deg) translateZ(-15px);
+  transform: rotateY(90deg) translateZ(-50px) translateY(-50px);
 }
 
 .element .right {
-  width: 30px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   background: yellow;
-  transform: rotateY(90deg) translateZ(35px);
+  transform: rotateY(90deg) translateZ(50px) translateY(-50px);
 }
 
 .element .top {
-  width: 50px;
-  height: 30px;
+  width: 100px;
+  height: 100px;
   background: yellow;
-  transform: rotateX(90deg) translateZ(15px);
+  transform: rotateX(90deg) translateZ(98px);
 }
 
-.element .botton {
-  width: 50px;
-  height: 30px;
+.element .bottom {
+  width: 100px;
+  height: 100px;
   background: yellow;
-  transform: rotateX(90deg) translateZ(-25px);
+  transform: rotateX(90deg) translateZ(0px);
+  backface-visibility: hidden;
 }
 
 .cube {
@@ -181,5 +183,4 @@ body {
 
 .cube .bottom {
   transform: rotateX(90deg) translateZ(-50px);
-
 }

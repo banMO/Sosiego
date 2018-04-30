@@ -1,11 +1,107 @@
 var degrees = 0;
+var row1 = [
+              {
+                name: 'HTML',
+                status: 'show',
+                type: 'js',
+              }, 
+              {
+                name: 'Javascript',
+                status: 'show',
+                type: 'js'
+              }, 
+              {
+                name: 'notas',
+                status: 'show',
+                type: 'js'
+              }, 
+              {
+                name: 'notas1',
+                status: 'show',
+                type: 'js'
+              }]
+
+var row2 = [
+  {
+    name: 'HTML',
+    status: 'show',
+    type: 'js',
+  },
+  {
+    name: 'Javascript',
+    status: 'show',
+    type: 'js'
+  },
+  {
+    name: 'notas',
+    status: 'show',
+    type: 'paper'
+  },
+  {
+    name: 'notas1',
+    status: 'show',
+    type: 'paper'
+  }]
+
+var row3 = [
+  {
+    name: 'HTML',
+    status: 'show',
+    type: 'js',
+  },
+  {
+    name: 'Javascript',
+    status: 'show',
+    type: 'js'
+  },
+  {
+    name: 'notas',
+    status: 'show',
+    type: 'html'
+  },
+  {
+    name: 'notas1',
+    status: 'show',
+    type: 'html'
+  }]
 
 window.onkeydown = function (e) {
   var key = e.keyCode ? e.keyCode : e.which;
   console.log(key)
   switch (key) {
+    // up
+    case 38:
+      degrees--;
+      $('.world').css({
+        'transform': 'rotate3d(1, 0, 0, ' + degrees + 'deg)'
+      })
+      break;
+    // down
+    case 40:
+      degrees++;
+      $('.world').css({
+        'transform': 'rotate3d(1, 0, 0, ' + degrees + 'deg)'
+      })
+      break;
+    // left
+    case 37:
+      degrees++;
+      $('.world').css({
+        'transform': 'rotate3d(0, 1, 0, ' + degrees + 'deg)'
+      })
+      break
+    // right
+    case 39:
+      degrees--;
+      $('.world').css({
+        'transform': 'rotate3d(0, 1, 0, ' + degrees + 'deg)'
+      })
+      break;
+
     case 32:
-      generateMaze();
+      createElements(row1, -325);
+      createElements(row2, -150);
+      createElements(row3, 30);
       break;
   }
 }
@@ -83,18 +179,19 @@ function createCube(index, objCurrent) {
 
 }
 
-function generateMaze()
+function createElements(directories, position)
 {
-  var row1 = ['wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf']
-  for (var i = 0; i < row1.length; i++) {
-    if (row1[i] == 'wf') {
-      this.wf(i * 50, -375)
+  /*var row1 = ['wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf']*/
+  /*var row1 = ['wf', '', '', '', '', 'wf', '', '', '', '', '', '', '', 'wf', '', '', '', '', 'wf']*/
+  for (var i = 0; i < directories.length; i++) {
+    if (row1[i].status == "show") {
+      this.createElement(i * 300, position,directories[i].type)
     }
     
   }
 }
 
-function wf(positionX, positionY)
+function createElement(positionX, positionY, type)
 {
 
   var world = document.getElementById('world')
@@ -117,18 +214,16 @@ function wf(positionX, positionY)
   var top = document.createElement("div")
   top.setAttribute('class', 'top')
 
-  var botton = document.createElement("div")
-  botton.setAttribute('class', 'back')
+  var bottom = document.createElement("div")
+  bottom.setAttribute('class', 'bottom')
 
   elementDir.style.transform = "translateZ(" + positionY + "px) translateX(" + positionX + "px)"
-  $(elementDir).hover(function () {
-    $(this).css("transform", "scale(1)");
-  });
+  front.style.backgroundImage = "url('img/"+type+".png')";
   elementDir.appendChild(front)
   elementDir.appendChild(back)
   elementDir.appendChild(left)
   elementDir.appendChild(right)
   elementDir.appendChild(top)
-  elementDir.appendChild(botton)
+  elementDir.appendChild(bottom)
   world.appendChild(elementDir)
 }
