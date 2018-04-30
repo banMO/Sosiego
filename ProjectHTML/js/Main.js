@@ -19,51 +19,54 @@ var row1 = [
                 name: 'notas1',
                 status: 'show',
                 type: 'js'
-              }]
+              }
+            ]
 
 var row2 = [
-  {
-    name: 'HTML',
-    status: 'show',
-    type: 'js',
-  },
-  {
-    name: 'Javascript',
-    status: 'show',
-    type: 'js'
-  },
-  {
-    name: 'notas',
-    status: 'show',
-    type: 'paper'
-  },
-  {
-    name: 'notas1',
-    status: 'show',
-    type: 'paper'
-  }]
+            {
+              name: 'HTML',
+              status: 'show',
+              type: 'js',
+            },
+            {
+              name: 'Javascript',
+              status: 'show',
+              type: 'js'
+            },
+            {
+              name: 'notas',
+              status: 'show',
+              type: 'paper'
+            },
+            {
+              name: 'notas1',
+              status: 'show',
+              type: 'paper'
+            }
+          ]
 
 var row3 = [
-  {
-    name: 'HTML',
-    status: 'show',
-    type: 'js',
-  },
-  {
-    name: 'Javascript',
-    status: 'show',
-    type: 'js'
-  },
-  {
-    name: 'notas',
-    status: 'show',
-    type: 'html'
-  },
-  {
-    name: 'notas1',
-    status: 'show',
-    type: 'html'
-  }]
+              {
+              name: 'HTML',
+              status: 'show',
+              type: 'js',
+              },
+              {
+              name: 'Javascript',
+              status: 'show',
+              type: 'js'
+              },
+              {
+              name: 'notas',
+              status: 'show',
+              type: 'html'
+              },
+              {
+              name: 'notas1',
+              status: 'show',
+              type: 'html'
+              }
+            ]
 
 window.onkeydown = function (e) {
   var key = e.keyCode ? e.keyCode : e.which;
@@ -176,24 +179,19 @@ function createCube(index, objCurrent) {
   cube.append(left);
   cube.append(right);
   return cube
-
 }
 
 function createElements(directories, position)
 {
-  /*var row1 = ['wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf', 'wf']*/
-  /*var row1 = ['wf', '', '', '', '', 'wf', '', '', '', '', '', '', '', 'wf', '', '', '', '', 'wf']*/
   for (var i = 0; i < directories.length; i++) {
     if (row1[i].status == "show") {
       this.createElement(i * 300, position,directories[i].type)
-    }
-    
+    }   
   }
 }
 
 function createElement(positionX, positionY, type)
 {
-
   var world = document.getElementById('world')
 
   var elementDir = document.createElement("div")
